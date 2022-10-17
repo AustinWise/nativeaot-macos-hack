@@ -2,24 +2,33 @@ using ObjCRuntime;
 
 namespace test_mac_dotnet;
 
-public partial class ViewController : NSViewController {
-	protected ViewController (NativeHandle handle) : base (handle)
-	{
-	}
+public partial class ViewController : NSViewController
+{
+    protected ViewController(NativeHandle handle) : base(handle)
+    {
+    }
 
-	public override void ViewDidLoad ()
-	{
-		base.ViewDidLoad ();
+    public override void ViewDidLoad()
+    {
+        base.ViewDidLoad();
 
-		// Do any additional setup after loading the view.
-	}
+        // Do any additional setup after loading the view.
+    }
 
-	public override NSObject RepresentedObject {
-		get => base.RepresentedObject;
-		set {
-			base.RepresentedObject = value;
+    public override void ViewWillAppear()
+    {
+        base.ViewWillAppear();
+		this.View.Window.Title = "Hello from NativeAOT";
+    }
 
-			// Update the view, if already loaded.
-		}
-	}
+    public override NSObject RepresentedObject
+    {
+        get => base.RepresentedObject;
+        set
+        {
+            base.RepresentedObject = value;
+
+            // Update the view, if already loaded.
+        }
+    }
 }

@@ -1,0 +1,7 @@
+
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Application>
+    <Assembly Name="Microsoft.macOS" Dynamic="Required All" />
+    <Assembly Name="test_mac_dotnet" Dynamic="Required All" />
+  </Application>
+</Directives>
